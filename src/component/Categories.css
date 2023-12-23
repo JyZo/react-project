@@ -1,0 +1,12 @@
+.category-basic ul{
+    position: relative;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #333;
+    border-right: 0px;
+}
+
+.active {
+    position: relative;
+    border: 3px solid #16ce10;
+}
