@@ -1,4 +1,9 @@
-.footer{
+.articlecls{
+    display: flex;
+    height: calc(100% - 50px);
+}
+
+.commu-wrap{
     display: flex;
     position: relative;
     margin: 0 auto;
@@ -6,9 +11,6 @@
     width: 1280px;
 }
 
-
-.messagefooter{
-    width: 1200px;
-    position: relative;
-    flex: 1;
+.section{
+    flex: 2;
 }

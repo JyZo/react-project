@@ -1,10 +1,32 @@
-.category-basic ul{
+.category-basic{
+    display: flex;
+    flex-direction: row;
+    background: #0a121d;
+    font-size: 20px;
+    padding-left: 0px;
+}
+
+.category-basic li{
+    list-style: none;
     position: relative;
     flex: 1;
     text-align: center;
     border: 1px solid #333;
     border-right: 0px;
+    border-color: #000;
 }
+
+.category-basic li a{
+    display: block;
+    position: relative;
+    line-height: 40px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.category-basic li a span{
+    color: #fff;
+} 
 
 .active {
     position: relative;
