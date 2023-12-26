@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Categories.css';
+import Subcategories from './Subcategories';
+import { useState } from 'react';
 
 const categories = [
   {
@@ -35,18 +37,21 @@ const categories = [
   },
 ];
 
-const recordLower = [
-  {
-    name: 'my record',
-    text: '내 대전기록',
-  },
-  {
-    name: 'hovermenu2',
-    text: '메뉴하나더',
-  },
-];
-
 const Categories = () => {
+  const [dropDownTF, setDropdownStatus] = useState(false);
+
+  const dropDown = (e, name) => {
+    console.log('dropDown!!');
+    console.log(name);
+    setDropdownStatus(true);
+  };
+
+  const dropUp = (e, name) => {
+    console.log('dropUp!!');
+    console.log(name);
+    setDropdownStatus(false);
+  };
+
   return (
     // <CategoriesBlock>
     //   console.log(c.name);
@@ -56,16 +61,23 @@ const Categories = () => {
       <nav>
         <ul className="category-basic">
           {categories.map((c) => (
-            <li key={c.name}>
+            <li
+              key={c.name}
+              className="dropli"
+              //   onMouseEnter={dropDown}
+              onMouseLeave={(e) => dropUp(e, c.name)}
+              onMouseEnter={(e) => dropDown(e, c.name)}
+            >
               <NavLink
                 activeclassname="active"
                 to={c.name === 'home' ? '/' : `/${c.name}`}
               >
                 <span>{c.text}</span>
               </NavLink>
-              {c.dropdown === 'true'
+              {/* {c.dropdown === 'true'
                 ? recordLower.map((c) => <ol key={c.name}>{c.name}</ol>)
-                : ''}
+                : undefined} */}
+              {dropDownTF && <Subcategories name={c.name} />}
             </li>
           ))}
         </ul>

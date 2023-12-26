@@ -32,3 +32,16 @@
     position: relative;
     border: 3px solid #16ce10;
 }
+
+.dropli:hover > a >span{
+    cursor: pointer;
+    color: #00b2cf;
+}
+
+
+
+/* li:hover + . {
+    background: gray;
+    cursor: pointer;
+    color: #fff;
+} */
